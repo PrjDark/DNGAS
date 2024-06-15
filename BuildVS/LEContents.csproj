@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF557532-0718-468E-B333-637E38BB6DC6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>
+    </AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Data\Script\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\Engine\Plugins\Zip\Binaries\x86\Ionic.Zip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Core">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.DNetwork">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.DNetwork.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Engine">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Engine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Framework">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Graphic">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Graphic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.IO">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Media">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Media.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lightness.Resources">
+      <HintPath>..\..\Engine\Lightness\Binaries\x86\Lightness.Resources.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX">
+      <HintPath>..\..\Engine\CLR\Binaries\x86\Microsoft.DirectX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput">
+      <HintPath>..\..\Engine\CLR\Binaries\x86\Microsoft.DirectX.DirectInput.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Config.cs">
+      <Link>Config.cs</Link>
+    </Compile>
+    <Compile Include="..\Config_CircleInfo.cs">
+      <Link>Config_CircleInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Config_PlayerName.cs">
+      <Link>Config_PlayerName.cs</Link>
+    </Compile>
+    <Compile Include="..\Config_UpdateHistory.cs">
+      <Link>Config_UpdateHistory.cs</Link>
+    </Compile>
+    <Compile Include="..\DNGAS.cs">
+      <Link>DNGAS.cs</Link>
+    </Compile>
+    <Compile Include="..\GameCommon.cs">
+      <Link>GameCommon.cs</Link>
+    </Compile>
+    <Compile Include="..\GameEnd.cs">
+      <Link>GameEnd.cs</Link>
+    </Compile>
+    <Compile Include="..\HowToPlay.cs">
+      <Link>HowToPlay.cs</Link>
+    </Compile>
+    <Compile Include="..\OnlineUpdate.cs">
+      <Link>OnlineUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\PDAdvertise.cs">
+      <Link>PDAdvertise.cs</Link>
+    </Compile>
+    <Compile Include="..\Startup.cs">
+      <Link>Startup.cs</Link>
+    </Compile>
+    <Compile Include="..\TextViewer.cs">
+      <Link>TextViewer.cs</Link>
+    </Compile>
+    <Compile Include="..\Title.cs">
+      <Link>Title.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
