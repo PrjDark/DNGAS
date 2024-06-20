@@ -8,7 +8,7 @@ using System;
 namespace LEContents {
 	public static class GameCommon {
 
-		public static VersionInfo Version = new VersionInfo("DNGAS:J:A:A:20190810001", "だんごなげほうだい");
+		public static VersionInfo Version = new VersionInfo("DNGAS:J:A:B:20221231001", "だんごなげほうだい");
 
 		public static bool NetworkStatus = false;
 
@@ -39,7 +39,7 @@ namespace LEContents {
 		public static ContentReturn CheckNetworkStatus() {
 			try {
 				GameCommon.UpdateAvailable = false;
-				DNet dNet = new DNet("http://DNGAS.network.dark-x.net/dNetwork.txt");
+				DNet dNet = new DNet("http://DNGAS.network.xprj.net/dNetwork.txt");
 				GameCommon.DNetMarker = dNet.GetStrings();
 				if(GameCommon.DNetMarker[0] == "d-Network") {
 
@@ -55,20 +55,20 @@ namespace LEContents {
 
 
 
-					GameCommon.DNetCInfo = new DNet("http://DNGAS.network.dark-x.net/Information/Circle.txt").GetStrings();
+					GameCommon.DNetCInfo = new DNet("http://DNGAS.network.xprj.net/Information/Circle.txt").GetStrings();
 					if(GameCommon.DNetCInfo[0] == "dNetwork.Information.Circle") {
 						Texture.SetFont("Meiryo");
 						Texture.SetTextSize(20);
 						Texture.SetTextColor(255, 255, 255);
 						GameCommon.TDNetCInfo = Texture.CreateFromText(GameCommon.DNetCInfo[1]);
 					}
-					DNet dNet2 = new DNet("http://DNGAS.update.network.dark-x.net/" + GameCommon.Version.GetNet() + ".txt");
+					DNet dNet2 = new DNet("http://DNGAS.update.network.xprj.net/" + GameCommon.Version.GetNet() + ".txt");
 					if(dNet2.Status <= 350) {
 						GameCommon.DNetNewVer = dNet2.GetStrings();
 					} else {
 						dNet2 = new DNet(string.Concat(new string[]
 						{
-							"http://DNGAS.update.network.dark-x.net/",
+							"http://DNGAS.update.network.xprj.net/",
 							GameCommon.Version.APPID,
 							"_",
 							GameCommon.Version.SKU,
@@ -81,11 +81,11 @@ namespace LEContents {
 						if(dNet2.Status <= 350) {
 							GameCommon.DNetNewVer = dNet2.GetStrings();
 						} else {
-							dNet2 = new DNet("http://DNGAS.update.network.dark-x.net/" + GameCommon.Version.APPID + ".txt");
+							dNet2 = new DNet("http://DNGAS.update.network.xprj.net/" + GameCommon.Version.APPID + ".txt");
 							if(dNet2.Status <= 350) {
 								GameCommon.DNetNewVer = dNet2.GetStrings();
 							} else {
-								dNet2 = new DNet("http://DNGAS.update.network.dark-x.net/Version.txt");
+								dNet2 = new DNet("http://DNGAS.update.network.xprj.net/Version.txt");
 								if(dNet2.Status > 350) {
 									return ContentReturn.END;
 								}

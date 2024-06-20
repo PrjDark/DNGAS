@@ -36,7 +36,7 @@ namespace LEContents {
 			Config_UpdateHistory.MenuTitleText = Texture.CreateFromText("アップデート履歴");
 			Texture.SetTextSize(16);
 			Config_UpdateHistory.HelpText = Texture.CreateFromText("決定・キャンセルボタンで前の画面に戻ります。 / ドラッグするとスクロールします。");
-			TextViewer.Initialize(new DNet("http://DNGAS.network.dark-x.net/Information/UpdateHistory.txt").GetStrings());
+			TextViewer.Initialize(new DNet("http://DNGAS.network.xprj.net/Information/UpdateHistory.txt").GetStrings());
 			GameCommon.CheckNetworkStatus();
 			return ContentReturn.OK;
 		}

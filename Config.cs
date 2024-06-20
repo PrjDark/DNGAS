@@ -92,7 +92,7 @@ namespace LEContents {
 					}
 				}
 				if(Config.MainMenu.Selected == Config.MainMenu.MenuList.Count - 3) {
-					Process.Start("http://c.dark-x.net/");
+					Process.Start("http://c.xprj.net/");
 					Menu.Disabled = false;
 				}
 				if(Config.MainMenu.Selected == Config.MainMenu.MenuList.Count - 2) {
