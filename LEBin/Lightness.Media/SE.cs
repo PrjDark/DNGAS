@@ -1,27 +1,26 @@
-using Lightness.Core;
+using DFramework;
 using System;
 
 namespace Lightness.Media {
 	public class SE : BGM {
 		public SE() {
-			this.Alias = MediaCommon.GetRandom();
-			Debug.Log('I', "Sound", "Initialize Sound Engine (SE): {0}", new object[]
-			{
-				this.Alias
-			});
+			Lightness.Debug.Log('I', "Media", "Initialize Sound Engine (SE)...", new object[0]);
+			if(!MediaService.Initialized) {
+				throw new MediaServiceNotInitialized();
+			}
+		}
+
+		public new void LoadFile(string FileName) {
+			this.DFrameworkAudioID = Audio.CreatePlayer();
+			Audio.LoadFile(this.DFrameworkAudioID, "./Contents/Sound/" + FileName);
 		}
 
 		public new void Play() {
-			if(MediaCommon.SameFrameSECount == 0) {
-				Debug.Log('I', "Sound", "Play SE: {0}", new object[]
-				{
-					this.FileName
-				});
-				base.Send("seek " + this.Alias + " to start");
-				base.Send("play " + this.Alias);
-				return;
-			}
-			Debug.Log('W', "Sound", "Only play one SE in one frame", new object[0]);
+			Audio.SetPosition(this.DFrameworkAudioID, 0u);
+			Audio.Play(this.DFrameworkAudioID);
+		}
+
+		private new void SetLoopStart(uint p) {
 		}
 	}
 }
