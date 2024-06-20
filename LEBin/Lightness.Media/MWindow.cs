@@ -11,7 +11,7 @@ namespace Lightness.Media {
 
 		protected override void WndProc(ref Message m) {
 			base.WndProc(ref m);
-			MediaCommon.WMProc(ref m);
+			//			MediaCommon.WMProc(ref m);
 		}
 
 		public MWindow() {

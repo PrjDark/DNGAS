@@ -1,4 +1,5 @@
 using DFramework;
+using Lightness.Core;
 using System;
 
 namespace Lightness.Media {
@@ -6,15 +7,16 @@ namespace Lightness.Media {
 		protected internal IntPtr DFrameworkAudioID = IntPtr.Zero;
 
 		public BGM() {
-			Lightness.Debug.Log('I', "Media", "Initialize Sound Engine (BGM)...", new object[0]);
-			if(!MediaService.Initialized) {
+			Lightness.Core.Debug.Log('I', "Media", "Initialize Sound Engine (BGM)...", new object[0]);
+			if(!MediaCommon.Initialized) {
 				throw new MediaServiceNotInitialized();
 			}
 		}
 
+
 		public void LoadFile(string FileName) {
 			this.DFrameworkAudioID = Audio.CreatePlayer();
-			Audio.LoadFile(this.DFrameworkAudioID, "./Contents/Sound/" + FileName);
+			Audio.LoadFile(this.DFrameworkAudioID, "./Data/Sound/" + FileName);
 			Audio.SetLoop(this.DFrameworkAudioID, 4294967295u, 0u);
 		}
 
