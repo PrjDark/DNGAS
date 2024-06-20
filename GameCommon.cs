@@ -8,7 +8,7 @@ using System;
 namespace LEContents {
 	public static class GameCommon {
 
-		public static VersionInfo Version = new VersionInfo("DNGAS:J:A:B:20221231001", "だんごなげほうだい");
+		public static VersionInfo Version = new VersionInfo("DNGAS:J:A:B:20230815001", "だんごなげほうだい");
 
 		public static bool NetworkStatus = false;
 
